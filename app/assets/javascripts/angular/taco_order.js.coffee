@@ -6,6 +6,7 @@ AngulaRails.controller "TacoOrderController", ($scope) ->
 	$scope.taco = {}
 	$scope.fillings = ["Beef", "Chicken", "Fish", "Carnitas"]
 	$scope.extras = [{name: "Sour Cream"}, {name: "Guac"}]
+	$scope.cheeses = ["No Cheese", "Normal Cheese"]
 	$scope.clear = () ->
 		$scope.taco = {}
 		for extra in $scope.extras
@@ -15,6 +16,7 @@ AngulaRails.controller "TacoOrderController", ($scope) ->
 		for extra in $scope.extras
 			if extra.checked == true
 				extras.push(extra.name)
+		extras
 	$scope.addTaco = () ->
 		$scope.taco.extras = $scope.getExtras()
 		$scope.tacos.push($scope.taco)
